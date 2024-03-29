@@ -44,7 +44,8 @@ discoverLink.addEventListener('click', ()=>{
 
   function displayCardCityDetail(name,nameCity,icon,temperature,valueMin,valueMax,humidity,speed,condition){
     getWeatherData(name).then(weather=>{
-      console.log(weather);
+      if(weather)
+      {
         const weatherCitys = document.getElementById('weatherCitys');
         const detailWeatherCity = document.getElementById('detailWeatherCity');
         weatherCitys.style.display='none';
@@ -58,6 +59,7 @@ discoverLink.addEventListener('click', ()=>{
         speed.textContent=`${weather.wind.speed} m/s`;
         condition.textContent=`${weather.weather[0].main}`;
         contentWeather.scrollIntoView({ behavior: 'smooth' }); 
+      }
     })
   }
 
@@ -133,6 +135,65 @@ discoverLink.addEventListener('click', ()=>{
     e.preventDefault();
     displayCardCityDetail(searchInput.value,nameCityDetail,iconTempCityDetail,temperatureCityDetail,valueMin,valueMax,valueHumidityCityDetail,valueSpeedCityDetail,WeatherconditionCityDetail);
   });
+
+
+  function clickinCard(card,numbercity){
+    card.addEventListener('click',()=>{
+      if(numbercity==1)
+      {
+        const nameCity1 = document.getElementById('nameCity1');
+        displayCardCityDetail(nameCity1.innerText,nameCityDetail,iconTempCityDetail,temperatureCityDetail,valueMin,valueMax,valueHumidityCityDetail,valueSpeedCityDetail,WeatherconditionCityDetail);
+
+      }
+      else if(numbercity==2)
+      {
+        const nameCity2 = document.getElementById('nameCity2');
+        displayCardCityDetail(nameCity2.innerText,nameCityDetail,iconTempCityDetail,temperatureCityDetail,valueMin,valueMax,valueHumidityCityDetail,valueSpeedCityDetail,WeatherconditionCityDetail);
+
+      }else if(numbercity==3)
+      {
+        const nameCity3 = document.getElementById('nameCity3');
+        displayCardCityDetail(nameCity3.innerText,nameCityDetail,iconTempCityDetail,temperatureCityDetail,valueMin,valueMax,valueHumidityCityDetail,valueSpeedCityDetail,WeatherconditionCityDetail);
+      }
+      else if(numbercity==4)
+      {
+        const nameCity4 = document.getElementById('nameCity4');
+        displayCardCityDetail(nameCity4.innerText,nameCityDetail,iconTempCityDetail,temperatureCityDetail,valueMin,valueMax,valueHumidityCityDetail,valueSpeedCityDetail,WeatherconditionCityDetail);
+      }
+      else if(numbercity==5)
+      {
+        const nameCity5 = document.getElementById('nameCity5');
+        displayCardCityDetail(nameCity5.innerText,nameCityDetail,iconTempCityDetail,temperatureCityDetail,valueMin,valueMax,valueHumidityCityDetail,valueSpeedCityDetail,WeatherconditionCityDetail);
+      }
+      else{
+        const nameCity6 = document.getElementById('nameCity6');
+        displayCardCityDetail(nameCity6.innerText,nameCityDetail,iconTempCityDetail,temperatureCityDetail,valueMin,valueMax,valueHumidityCityDetail,valueSpeedCityDetail,WeatherconditionCityDetail);
+      }
+    });
+  }
+
+
+  const card1=document.getElementById('card1');
+  clickinCard(card1,1);
+  
+  const card2=document.getElementById('card2');
+  clickinCard(card2,2);
+  
+  const card3=document.getElementById('card3');
+  clickinCard(card3,3);
+  
+  const card4=document.getElementById('card4');
+  clickinCard(card4,4);
+
+  const card5=document.getElementById('card5');
+  clickinCard(card5,5);
+
+  const card6=document.getElementById('card6');
+  clickinCard(card6,6);
+
+  
+
+  
 
 
   
