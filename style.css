@@ -37,6 +37,7 @@
     border: 1.5px solid;
     margin: 50px;
     cursor: pointer;
+    transition: 0.3s background-color ease-in-out;
 }
 .card:hover{
     background-color: #c0c0c0;
@@ -74,4 +75,9 @@ footer{
     align-items: center;
     justify-content: space-around;
 }
+.detailWeather{
+    border: 1.5px solid;
+    cursor: pointer;
+}
+
 
